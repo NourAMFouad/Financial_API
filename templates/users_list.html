@@ -1,0 +1,12 @@
+
+{% for UserProfile in register_users %}
+
+    <p>Local_ID: {{ UserProfile.pk }}</p>
+    <p>user_id: {{ UserProfile.user_id }}</p>
+    <p>first_name: {{ UserProfile.first_name }}</p>
+    <p>last_name: {{ UserProfile.last_name }}</p>
+    <p>phone: {{ UserProfile.phone }}</p>
+    <p>e_mail: {{ UserProfile.email }}</p>
+    <p>*************************************</p>
+{% endfor %}
+

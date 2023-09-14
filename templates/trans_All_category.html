@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transactions with Category: {{ category }}</title>
+</head>
+<body>
+    <h1>Transactions with Category: {{ category }}</h1>
+    
+    <ul>
+        {% for transaction in transactions %}
+            <li>Local_ID: {{ transaction.pk }}</li>
+            <li>Category: {{ transaction.category }}</li>
+            <li>Transaction Date: {{ transaction.transaction_date }}</li>
+          
+            <hr>
+        {% empty %}
+            <li>No transactions found for this category.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

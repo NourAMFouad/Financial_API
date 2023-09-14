@@ -1,0 +1,11 @@
+<form method ="post">
+   {% csrf_token %}
+   {{ form.as_p }}
+   <button type="Submit">Submit</button>
+    
+</form>
+
+
+{% if user_not_found %}
+   <p style="color: red;">User not found. Please register the user first.</p>
+{% endif %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for transaction in transactions %}
+
+    <p>Local_ID: {{ transaction.pk }}</p>
+    <p>Transaction Date: {{ transaction.transaction_date }}</p>
+    <p>Description: {{ transaction.description }}</p>
+    <p>Amount: ${{ transaction.amount }}</p>
+    <p>Category: {{ transaction.category }}</p>
+    <p>User ID: {{ transaction.user_id }}</p>
+    <p>Currency Type: {{ transaction.currency_type }}</p>
+    <p>Location: {{ transaction.location }}</p>
+    <p>Payment Method: {{ transaction.payment_method }}</p>
+    <p>*************************************</p>
+{% endfor %}
+{% endblock content %}

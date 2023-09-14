@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Transactions</title>
+</head>
+<body>
+    <h1>Transactions for User: {{ user_id }}</h1>
+
+    <ul>
+        {% for transaction in trans_ret %}
+            <li>
+                Transaction Date: {{ transaction.transaction_date }}<br>
+                Description: {{ transaction.description }}<br>
+                Amount: {{ transaction.amount }}<br>
+                Category: {{ transaction.category }}<br>
+                Currency Type: {{ transaction.currency_type }}<br>
+                Location: {{ transaction.location }}<br>
+                Payment Method: {{ transaction.payment_method }}<br>
+                <p>**************************</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
