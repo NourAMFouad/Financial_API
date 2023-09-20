@@ -51,3 +51,10 @@ class transaction(models.Model):
         return self.user_id
    #     return self.description + " " + self.category + " " + self.user_id + " " + self.location + " " + self.payment_method
 
+class registration(models.Model):
+    name = models.CharField(max_length = 100)
+    contact = models.CharField('Phone number', max_length = 300)
+    time = models.TimeField()
+    count = models.IntegerField()
+    notes = models.CharField(max_length = 300, blank = True)
+    

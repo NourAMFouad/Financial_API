@@ -31,18 +31,29 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #3
     'financial_api',
+    #2
     'rest_framework',
     'rest_framework.authtoken',
+    #'rest_auth',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_auth',  # Add this
+    #1
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
+    'allauth.account.middleware.AccountMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -118,7 +129,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -131,8 +142,20 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',  # Token-based authentication
-        # Add any other authentication classes as needed
-    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
 }
+
+AUTHENTICATION_CLASSES = (
+    # ...
+    'allauth.account.auth_backends.AuthenticationBackend',
+    # ...
+)
+
+#Configure allauth settings
+ACCOUNT_EMAIL_VERIFICATION = 'none'  # Disable email confirmation for simplicity
+AUTHENTICATION_METHOD = 'email'  # Use email as the primary authentication method

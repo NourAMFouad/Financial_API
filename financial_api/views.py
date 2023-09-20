@@ -5,6 +5,16 @@ from .forms import transactionForm, userForm
 
 from django.utils import timezone  # Import timezone module
 
+#authentication
+from rest_framework import generics
+from rest_framework.response import Response
+from rest_framework import status
+from .serializers import UserProfileRegistrationSerializer
+from rest_framework.permissions import AllowAny
+
+ # login
+from rest_framework.authtoken.models import Token
+from rest_framework.authtoken.views import ObtainAuthToken
 
 # Authentication
 # IsAuthentication --> to handle requests when write it in class
@@ -222,3 +232,23 @@ def generate_financial_report(request, user_id):
     } 
 
     return render(request, "report.html", context )
+
+
+class UserProfileRegistrationView(generics.CreateAPIView):
+    serializer_class = UserProfileRegistrationSerializer
+    #authentication_classes = []  # Remove authentication classes
+    permission_classes = [AllowAny]
+
+    def create(self, request, *args, **kwargs):
+        # Override the create method to allow unauthenticated users
+        return super().create(request, *args, **kwargs)
+
+
+class UserLoginView(ObtainAuthToken):
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            user = serializer.validated_data['user']
+            token, created = Token.objects.get_or_create(user=user)
+            return Response({'token': token.key})
+        return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
