@@ -31,19 +31,27 @@ django-admin startproject nameofproject .
 when you write in terminal:
 python manage.py runserver 
 you can find this
+
 <img src="1- runserver.png">
 
 Now you create your and run the server.
 
 In settings.py In settings.py file in root directory, define your app project by writing project name.
 by adding the appname in INSTALLED_APPS 
-like this 
+like this
+
+
 <img src="2- app configuration in settings.py file.png">
+
+
 
 START to create the functions of API.
 
 In our project we use ## MVT architecture ## , it is Abbreviation of Model, View, and Template (MVT) approach.
+
+
 <img src="3- MVT architecture .png">
+
 
 in this approach,  Django application consists of the following components: 
     .URL dispatcher 
