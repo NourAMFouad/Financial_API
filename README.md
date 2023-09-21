@@ -38,7 +38,7 @@ Now you create your and run the server.
 
 In settings.py In settings.py file in root directory, define your app project by writing project name.
 by adding the appname in INSTALLED_APPS 
-like this
+like this.
 
 
 <img src="2- app configuration in settings.py file.png">
