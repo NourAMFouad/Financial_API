@@ -31,7 +31,7 @@ django-admin startproject nameofproject .
 when you write in terminal:
 python manage.py runserver 
 you can find this
-<img src="D:\My_courses\web_backend\Screenshot 2023-09-21 170734.png">
+<img src="[D:\My_courses\web_backend\Screenshot 2023-09-21 170734.png](https://github.com/NourAMFouad/Financial_API/blob/master/1-%20runserver.png)">
 
 Now you create your and run the server.
 
