@@ -53,11 +53,14 @@ In our project we use **MVT architecture** , it is Abbreviation of Model, View, 
 <img src="3- MVT architecture .png">
 
 
-in this approach,  Django application consists of the following components: 
-    .URL dispatcher 
-    .View 
-    .Model 
-    .Template 
+In this approach, a Django application consists of the following components:
 
+- **URL dispatcher**: Responsible for routing incoming HTTP requests to the appropriate view function based on the URL patterns defined in your Django project.
+
+- **View**: Handles the logic for processing requests and returning responses. Views interact with models to retrieve and manipulate data and render templates to generate HTML responses.
+
+- **Model**: Represents the application's data and business logic. Models define the structure of database tables and provide an abstraction layer for database operations.
+
+- **Template**: Defines the structure and layout of the final HTML output sent to the user's browser. Templates include placeholders for dynamic content and are used by views to render HTML responses.
 
 
