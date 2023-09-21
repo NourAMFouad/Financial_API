@@ -7,13 +7,13 @@ Welcome to the installation guide for financial api. This guide will walk you th
 ### Prerequistes:
 Before you begin, ensure you download python and make sure it's added to your system's PATH.
 
--- Create directory in any place on your pc and open it in gitbash and write ** code . ** to open the directory in VS code.
+-- Create directory in any place on your pc and open it in gitbash and write **code .** to open the directory in VS code.
 
 #### In VS code terminal 
 Start to install 
 1- Virtual environment:
-write ** python -m virtualenv venv ** venv --> virtual environment name.
-and activate it by ** venv\Scripts\activate **
+write **python -m virtualenv venv** venv --> virtual environment name.
+and activate it by **venv\Scripts\activate**
 To deactivate :
 deactivate
 
@@ -47,7 +47,7 @@ like this.
 
 START to create the functions of API.
 
-In our project we use ** MVT architecture ** , it is Abbreviation of Model, View, and Template (MVT) approach.
+In our project we use **MVT architecture** , it is Abbreviation of Model, View, and Template (MVT) approach.
 
 
 <img src="3- MVT architecture .png">
