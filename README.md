@@ -13,9 +13,9 @@ Before you begin, ensure you download python and make sure it's added to your sy
 Start to install 
 1- Virtual environment:
 write **python -m virtualenv venv** venv --> virtual environment name.
-and activate it by **venv\Scripts\activate**
+and activate it by **venv\Scripts\activate**.
 To deactivate :
-deactivate
+**deactivate**
 
 Now, you install and set all dependencies in virtual environment not in local device.
 
@@ -30,11 +30,12 @@ django-admin startproject nameofproject .
 
 when you write in terminal:
 python manage.py runserver 
-you can find this
+you can find the webpage with a successful install message is displayed.
 
 <img src="1- runserver.png">
 
-Now you create your and run the server.
+
+Now you create your the server.
 
 In settings.py In settings.py file in root directory, define your app project by writing project name.
 by adding the appname in INSTALLED_APPS 
@@ -44,7 +45,7 @@ like this.
 <img src="2- app configuration in settings.py file.png">
 
 
-
+.
 START to create the functions of API.
 
 In our project we use **MVT architecture** , it is Abbreviation of Model, View, and Template (MVT) approach.
