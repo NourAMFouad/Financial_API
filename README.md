@@ -64,4 +64,41 @@ In this approach, a Django application consists of the following components:
 
 - **Template**: Defines the structure and layout of the final HTML output sent to the user's browser. Templates include placeholders for dynamic content and are used by views to render HTML responses.
 
+___________________________________________________________________________________
+# Endpoints
+
+Endpoint 1: /trans_list/
+this endpoint allow users to list all financial transactions.
+
+Endpoint 2: /trans_create/
+allow users to create financial transaction, each transaction should have fields:
+transaction_date, description, amount, category, user_id, currency_type, location, payment_method.
+
+Endpoint 3: /trans_retrieve/<pk>/
+Allow users to retrieve individual financial transactions based on their unique IDs.
+
+Endpoint 4: /trans_update/<pk>/edit/
+allow users to update individual financial transactions based on their unique IDs.
+
+Endpoint 5: /list_all_categories/<str:category>/
+to list all available transaction categories by writting category name.
+
+Endpoint 6: /user_create/
+To create new user and each user should have fields:
+user_id, first_name, last_name, phone, email, password.
+
+Endpoint 7: /api/users/
+To list all Registered users.
+
+Endpoint 8: /api/users/<user_id>/transactions/
+Allow users to retrieve their own transactions based on user ID.
+
+Endpoint 9: /api/reports/<str:user_id>/
+Generates monthly financial report summary of transaction for each specific user using ID.
+
+Endpoint 10: /register/
+To allow new user to register and enter all his/her information, to store it in database.
+
+Endpoint 11: /login/
+Allow user to enter in protected pages after confirming his/her information is in database.
 
